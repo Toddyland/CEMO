@@ -1,0 +1,76 @@
+body {
+    font-family: 'Times new Rome';
+    background-image: url('ns.jpg');
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-image: url('ns2.jpg');
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.service {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+    cursor: pointer; 
+    overflow: hidden;
+    position: relative;
+    flex-basis: calc(50% - 20px); /* Ajustar el ancho para dos en fila */
+}
+
+.service img {
+    width: 50%;
+    height: auto;
+    transition: opacity 0.3s;
+}
+
+.service:hover img {
+    opacity: 0.3; 
+}
+
+.service h2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(0, 0, 0);
+    display: none;
+    z-index: 1;
+}
+
+.service:hover h2 {
+    display: block;
+}
+
+.info {
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.5s ease;
+    margin-left: 20px;
+    color: #000000;
+}
+
+.info.visible {
+    max-width: 300px; /* Ajustar según sea necesario */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

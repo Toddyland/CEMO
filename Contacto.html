@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto CEMO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="contacto.css">
+    <script>
+        function validarSesion(event) {
+            const sesionIniciada = false; 
+            const alert = document.getElementById('alerta-sesion');
+
+            if (!sesionIniciada) {
+                alert.style.display = 'block'; 
+                event.preventDefault(); 
+            } else {
+                alert.style.display = 'none'; 
+            }
+        }
+
+        function actualizarHoras() {
+            const servicio = document.getElementById('servicio').value;
+            const horaSelect = document.getElementById('hora');
+            horaSelect.innerHTML = ''; // Limpiar opciones anteriores
+
+            const horas = {
+                odontologia: ['7:00 AM', '7:40 AM', '8:20 AM', '9:00 AM', '9:40 AM', '10:20 AM'],
+                ginecologia: ['8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM'],
+                laboratorio: ['7:00 AM', '7:30 AM', '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM'],
+                pediatria: ['9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM'],
+                epidemiologia: ['9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM']
+            };
+
+            horas[servicio].forEach(hora => {
+                const option = document.createElement('option');
+                option.value = hora;
+                option.textContent = hora;
+                horaSelect.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CEMO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-primary" href="login.html" role="button">Iniciar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>Contacto CEMO</h1>
+</div>
+
+<div class="container my-5">
+    <div class="content-section">
+        <div class="alert alert-warning" id="alerta-sesion">
+            Debes iniciar sesión para poder agendar una cita.
+        </div>
+        <form id="formulario" onsubmit="validarSesion(event)">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+
+            <label for="telefono">Número Telefónico:</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+
+            <label for="servicio">Servicio:</label>
+            <select id="servicio" name="servicio" class="form-control" required onchange="actualizarHoras()">
+                <option value="odontologia">Odontología</option>
+                <option value="ginecologia">Ginecología</option>
+                <option value="laboratorio">Laboratorio</option>
+                <option value="pediatria">Pediatría</option>
+                <option value="epidemiologia">Epidemiología</option>
+            </select>
+
+            <label for="dia">Día de la Semana:</label>
+            <select id="dia" name="dia" class="form-control" required>
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+            </select>
+
+            <label for="hora">Hora:</label>
+            <select id="hora" name="hora" class="form-control" required>
+                <!-- Las horas se llenarán automáticamente según el servicio -->
+            </select>
+
+            <div class="horario mt-3">
+                <strong>Horario de Atención:</strong><br>
+                Lunes a Viernes: 7:00 AM - 4:00 PM
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Agendar Cita</button>
+        </form>
+    </div>
+</div>
+
+<footer class="text-center">
+    <div class="text-center p-3">
+        © 2024 CEMO
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

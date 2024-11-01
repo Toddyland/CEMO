@@ -1,0 +1,49 @@
+body {
+    font-family: 'Time new Rome';
+    background-image: url('ns.jpg');  
+    background-color: #2b4158; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.header {  
+    text-align: center;  
+    margin: 40px 0;  
+    color: white; 
+}
+
+.content-section {
+    background-image: url('ns2.jpg') ;
+    border: 1px solid #27365b; 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(45, 62, 99, 0.1);
+    height: auto; 
+    transition: transform 0.3s;
+}
+
+.content-section:hover {
+    transform: scale(1.02); 
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.testimonial {  
+    background-color: rgba(148, 86, 86, 0.8);  
+    border-radius: 10px;  
+    padding: 20px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    color: white;  
+    margin: 20px 0; 
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    margin-top: 40px; 
+}

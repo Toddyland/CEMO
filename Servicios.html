@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - CEMO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="servicios.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CEMO</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">  
+                <a class="nav-link" href="servicios.html">Servicios</a>  
+            </li>  
+            <li class="nav-item">
+                <a class="btn btn-primary" href="login.html" role="button">Iniciar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Servicios de Odontología</h1>
+    <div class="row">
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="file:///C:/Users/GABRIELA%20IBARRA/Downloads/dise;o%20de%20odontologia/medical-report.png" alt="Consulta Dental">
+            <h2>Consulta Dental</h2>
+            <div class="info">
+                <p>La consulta dental incluye una evaluación completa de tu salud bucal.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="file:///C:/Users/GABRIELA%20IBARRA/Downloads/dise;o%20de%20odontologia/tooth.png" alt="Limpiado Dental">
+            <h2>Limpiado Dental</h2>
+            <div class="info">
+                <p>El limpiado dental ayuda a eliminar la placa y el sarro acumulado.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="file:///C:/Users/GABRIELA%20IBARRA/Downloads/dise;o%20de%20odontologia/braces.png" alt="Ortodoncia">
+            <h2>Ortodoncia</h2>
+            <div class="info">
+                <p>La ortodoncia corrige los dientes y mandíbulas desalineados.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="file:///C:/Users/GABRIELA%20IBARRA/Downloads/dise;o%20de%20odontologia/dentist-tools.png" alt="Endodoncia">
+            <h2>Endodoncia</h2>
+            <div class="info">
+                <p>La endodoncia, o tratamiento de conducto, salva dientes dañados.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Servicios de Ginecología</h1>
+    <div class="row">
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="gine.png" alt="Consulta Ginecológica">
+            <h2>Consulta Ginecológica</h2>
+            <div class="info">
+                <p>La consulta ginecológica incluye exámenes y asesoría sobre salud reproductiva.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="bebé.png" alt="Control de Embarazo">
+            <h2>Control de Embarazo</h2>
+            <div class="info">
+                <p>El control de embarazo asegura el bienestar de la madre y el bebé.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Servicios de Pediatría</h1>
+    <div class="row">
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="pedia2.png" alt="Consulta Pediátrica">
+            <h2>Consulta Pediátrica</h2>
+            <div class="info">
+                <p>La consulta pediátrica incluye el seguimiento del crecimiento y desarrollo infantil.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="pedia.png" alt="Vacunación">
+            <h2>Vacunación</h2>
+            <div class="info">
+                <p>El servicio de vacunación protege a los niños de enfermedades prevenibles.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Servicios de Laboratorio</h1>
+    <div class="row">
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="lab2.png" alt="Análisis de Sangre">
+            <h2>Análisis de Sangre</h2>
+            <div class="info">
+                <p>Realizamos análisis de sangre para evaluar tu salud general.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="labsin.png" alt="Análisis de Orina">
+            <h2>Análisis de Orina</h2>
+            <div class="info">
+                <p>El análisis de orina ayuda a detectar problemas de salud.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Servicios de Epidemiología</h1>
+    <div class="row">
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="epi.png" alt="Estudio Epidemiológico">
+            <h2>Estudio Epidemiológico</h2>
+            <div class="info">
+                <p>Los estudios epidemiológicos ayudan a entender la propagación de enfermedades.</p>
+            </div>
+        </div>
+        <div class="service" onclick="toggleInfo(this)">
+            <img src="epi2.png" alt="Vacunación">
+            <h2>Vacunación</h2>
+            <div class="info">
+                <p>Ofrecemos vacunación para prevenir enfermedades infecciosas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleInfo(service) {
+        const info = service.querySelector('.info');
+        info.classList.toggle('visible'); // Alternar clase para mostrar/ocultar
+    }
+</script>
+
+</body>
+</html>
